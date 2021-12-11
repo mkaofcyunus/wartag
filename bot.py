@@ -25,13 +25,13 @@ async def cancel(event):
 
 @client.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
-  await event.reply("Hi I'm @UtagOnlineBot I was created to search all contacts in chat.\nMerhaba! Grubunuzdaki Kullanıcıları Etiketlemek İçin Yaratıldım. Beni Grubunuza Ekleyin ve Gerisini Bana Bırakın.",
+  await event.reply("Hi I'm @autotagger_bot I was created to search all contacts in chat.\n \n\nMerhaba! Ben @autotagger_bot Grubunuzdaki Kullanıcıları Etiketlemek İçin Yaratıldım. Beni Grubunuza Ekleyin ve Gerisini Bana Bırakın.",
                     buttons=(
-                      [Button.url('➕Beni Bir Gruba Ekle➕', 'http://t.me/UtagOnlineBot?startgroup=a'),],
-                      [ Button.url('🔥Grup', 'https://t.me/sohbet_onlinee'),],
-                      [ Button.url('🔥sahip ', 'https://t.me/Ruhsuzzadaam'),],
-                      [  Button.url('🔥Music botu ', 'https://t.me/onlineemusicbot'),],
-                     [ Button.url('📣resmi kanal', 'https://t.me/uye_ekleme_hizmeti')]
+                      [Button.url('➕Beni Bir Gruba Ekle➕', 'http://t.me/autotagger_bot?startgroup=a'),],
+                      [ Button.url('🔥 SÖHBET GRUBU 🥵', 'https://t.me/TeamAlmanSexy'),],
+                      [ Button.url('🔥Sahibim ', 'https://t.me/Sakirbey1'),],
+                      [  Button.url('🔥Developer ', 'https://t.me/FrozenBey'),],
+                     [ Button.url('📣Resmi Kanal', 'https://t.me/HerlockBots')]
                     ),
                     link_preview=False
                    )
@@ -41,13 +41,13 @@ async def help(event):
 
 /utag <Mesajınız> - kullanıcıları etiketlerim.
 /atag <Mesajınız> - Sadece yöneticileri etiketlerim.
-/cancel@UtagOnlineBot - Etiket işlemini iptal ederim.
+/cancel - Etiket işlemini iptal ederim.
 ❕ Yalnızca yöneticileri bu komutları kullanabilir."""
   await event.reply(helptext,
                     buttons=(
-                      [Button.url('➕Beni Bir Gruba Ekle➕', 'https://t.me/UtagOnlineBot?startgroup=a'),
-                       Button.url('🎛️Grup', 'https://t.me/sohbet_onlinee'),
-                      Button.url('📣resmi kanal', 'https://t.me/uye_ekleme_hizmeti')]
+                      [Button.url('➕Beni Bir Gruba Ekle➕', 'https://t.me/autotagger_bot?startgroup=a'),
+                       Button.url('Sohbet Grup🥵', 'https://t.me/TeamAlmanSexy'),
+                      Button.url('📣Resmi Kanal', 'https://t.me/HerlockBots')]
                     ),
                     link_preview=False
                    )
@@ -84,7 +84,7 @@ async def mentionall(event):
     usrtxt = ""
     async for usr in client.iter_participants(event.chat_id):
       usrnum += 1
-      usrtxt += f"[{usr.first_name}](tg://user?id={usr.id}) "
+      usrtxt += f"👥-[{usr.first_name}](tg://user?id={usr.id})\n "
       if event.chat_id not in anlik_calisan:
         await event.respond("Etikeletme İşlemi Bitti 🛑 İyi günler dileriz 🤗")
         return
@@ -102,7 +102,7 @@ async def mentionall(event):
     usrtxt = ""
     async for usr in client.iter_participants(event.chat_id):
       usrnum += 1
-      usrtxt += f"[{usr.first_name}](tg://user?id={usr.id}) "
+      usrtxt += f"👥-[{usr.first_name}](tg://user?id={usr.id})\n "
       if event.chat_id not in anlik_calisan:
         await event.respond("İşlem Başarılı Bir Şekilde Durduruldu ❌")
         return
@@ -143,7 +143,7 @@ async def mentionalladmin(event):
     usrtxt = ""
     async for usr in client.iter_participants(event.chat_id,filter=ChannelParticipantsAdmins):
       usrnum += 1
-      usrtxt += f"[{usr.first_name}](tg://user?id={usr.id}) "
+      usrtxt += f"👥-[{usr.first_name}](tg://user?id={usr.id})\n "
       if event.chat_id not in anlik_calisan:
         await event.respond("Etikeletme İşlemi Bitti 👥 İyi günler dileriz 🤗")
         return
@@ -161,7 +161,7 @@ async def mentionalladmin(event):
     usrtxt = ""
     async for usr in client.iter_participants(event.chat_id,filter=ChannelParticipantsAdmins):
       usrnum += 1
-      usrtxt += f"[{usr.first_name}](tg://user?id={usr.id}) "
+      usrtxt += f"👥-[{usr.first_name}](tg://user?id={usr.id})\n "
       if event.chat_id not in anlik_calisan:
         await event.respond("İşlem Başarılı Bir Şekilde Durduruldu ❌")
         return
@@ -179,5 +179,5 @@ async def mentionalladmin(event):
     return await event.respond("__Bu komut gruplarda ve kanallarda kullanılabilir.!__")
   
 
-print(">> Bot çalışıyor merak etme 👮‍♂️ @UtagOnlineBot bilgi alabilirsin <<")
+print(">> Bot çalışıyor merak etme 👮‍♂️ @FrozenBey bilgi alabilirsin <<")
 client.run_until_disconnected()
